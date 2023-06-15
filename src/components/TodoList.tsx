@@ -9,3 +9,5 @@ const TodoList: React.FC = ()=>{
     )}
   </ul>
 }
+
+export default TodoList
