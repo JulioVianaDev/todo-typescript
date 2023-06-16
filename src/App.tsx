@@ -1,12 +1,15 @@
-import React from 'react';
+import React,{useState} from 'react';
 import TodoList from './components/TodoList'
 import NewTodo from './components/NewTodo';
 function App() {
-  const todos = [{id:1,text: "testando o react"}]
+  const [todos,setTodos] = useState<{id: number,text:string}[]>([])
 
   const todoAddHandler = (text: string)=>{
-    console.log(text)
-    
+    let newObject={
+      id: Math.random(),
+      text: text
+    }
+    setTodos([...todos,newObject]) 
   }
   return (
     <div className="App">
