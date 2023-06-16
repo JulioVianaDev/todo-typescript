@@ -3,9 +3,14 @@ import TodoList from './components/TodoList'
 import NewTodo from './components/NewTodo';
 function App() {
   const todos = [{id:1,text: "testando o react"}]
+
+  const todoAddHandler = (text: string)=>{
+    console.log(text)
+    
+  }
   return (
     <div className="App">
-      <NewTodo/>
+      <NewTodo onAddTodo ={todoAddHandler}/>
       <TodoList items={todos}/> 
     </div>
   );
