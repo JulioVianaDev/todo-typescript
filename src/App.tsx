@@ -11,10 +11,16 @@ function App() {
     }
     setTodos([...todos,newObject]) 
   }
+  const deleteTodo=(id: number)=>{
+    setTodos(lastState=>{
+        return lastState.filter(t=>t.id !== id)
+      }
+    )
+  }
   return (
     <div className="App">
-      <NewTodo onAddTodo ={todoAddHandler}/>
-      <TodoList items={todos}/> 
+      <NewTodo  onAddTodo ={todoAddHandler}/>
+      <TodoList deleteTodo={deleteTodo} items={todos}/> 
     </div>
   );
 }
