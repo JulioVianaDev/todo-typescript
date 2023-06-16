@@ -1,10 +1,13 @@
-import React,{useRef} from "react";
+import React,{useRef,useEffect} from "react";
 
 type newTodoProps ={
   onAddTodo: (todoText: string)=>void;
 }
 
 const NewTodo: React.FC<newTodoProps> = (props)=>{
+  useEffect(()=>{
+
+  },[])
   const inputRefText = useRef<HTMLInputElement>(null);
  
   
